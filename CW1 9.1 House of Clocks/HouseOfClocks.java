@@ -1,7 +1,7 @@
-/**
+/*
  * CW1 Week 9
  */
-package CW1_9;
+package EX9CW1_9;
 
 public class HouseOfClocks {
 
@@ -35,10 +35,9 @@ public class HouseOfClocks {
     // Throw an IndexOutOfBoundsException if the clockIndex is not valid,
     //     and use the message "No clock stored at index " followed by the invalid index. 
     public void tick(int clockIndex) {
-        if (0 <= clockIndex && clockIndex <= numClocks) {
+        if (0 <= clockIndex && clockIndex < numClocks) {
             clocksCollection[clockIndex].tick();
         } else throw new IndexOutOfBoundsException("No clock stored at index " + clockIndex);
-
     }
 
 
@@ -73,7 +72,7 @@ public class HouseOfClocks {
 
         // Test Case Tick #2
         try {
-            hc1.tick(100);
+            hc1.tick(3);
         } catch (IndexOutOfBoundsException e) {
             System.out.println(e.getMessage());
         }

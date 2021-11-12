@@ -1,6 +1,7 @@
-/**
+/*
  * Exercise Week 9
  */
+package EX9CW1_9;
 
 public class Clock {
     private int hours;
@@ -25,13 +26,13 @@ public class Clock {
     //     or if it does not correspond to a valid time between 00:00 and 23:59.
     public Clock(String s) {
         String[] time = s.split(":");
-        if (time.length == 2) {
+        if (s.length() == 5 && time.length == 2) {
             int h = Integer.parseInt(time[0]), m = Integer.parseInt(time[1]);
             if (0 <= h && h <= 23 && 0 <= m && m <= 59) {
                 this.hours = h;
                 this.minutes = m;
             } else throw new IllegalArgumentException();
-        }
+        } else throw new IllegalArgumentException();
     }
 
 
@@ -111,7 +112,7 @@ public class Clock {
         System.out.println(clock3);
 
         try {
-            Clock clock4 = new Clock("50:00");
+            Clock clock4 = new Clock("2:12");
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid argument in constructor 2!");
         }
